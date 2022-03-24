@@ -1,8 +1,17 @@
+import { Box, Typography } from "@mui/material";
+
 const Welcome = () => {
   return (
-    <div>
-      <h1>Welcome Page</h1>
-    </div>
+    <Box
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "90vh",
+      }}
+    >
+      <Typography variant="h2">Welcome Page</Typography>
+    </Box>
   );
 };
 
