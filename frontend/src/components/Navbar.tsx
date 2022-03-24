@@ -12,6 +12,9 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import { Badge } from "@mui/material";
+import PersonIcon from "@mui/icons-material/Person";
+import { useContext } from "react";
 
 const pages = ["Welcome", "Users"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -53,6 +56,12 @@ const Navbar = () => {
               LOGO
             </Link>
           </Typography>
+
+          <Box sx={{ margin: "0px 12px 0px 12px" }}>
+            <Badge badgeContent={4} color="secondary">
+              <PersonIcon color="inherit" />
+            </Badge>
+          </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton

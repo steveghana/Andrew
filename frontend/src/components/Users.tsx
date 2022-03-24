@@ -27,8 +27,6 @@ type UsersProps = {
 };
 
 const Users = (props: UsersProps) => {
-  console.log(props.users);
-
   return (
     <Box
       style={{
@@ -53,8 +51,8 @@ const Users = (props: UsersProps) => {
         </Box>
       ) : (
         props.users?.map((user) => (
-          <Box>
-            <Card key={user.id.value} sx={{ maxWidth: 345 }}>
+          <Box key={user.id.value}>
+            <Card sx={{ maxWidth: 345 }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -72,18 +70,18 @@ const Users = (props: UsersProps) => {
                     praesentium nemo perferendis! Quaerat!
                   </Typography>
                 </CardContent>
-                <CardActions>
-                  <Button
-                    size="small"
-                    color="error"
-                    variant="outlined"
-                    style={{ display: "inline-block", margin: "10px" }}
-                    onClick={props.handleDelete}
-                  >
-                    Delete user
-                  </Button>
-                </CardActions>
               </CardActionArea>
+              <CardActions>
+                <Button
+                  size="small"
+                  color="error"
+                  variant="outlined"
+                  style={{ display: "inline-block", margin: "10px" }}
+                  onClick={props.handleDelete}
+                >
+                  Delete user
+                </Button>
+              </CardActions>
             </Card>
           </Box>
         ))
