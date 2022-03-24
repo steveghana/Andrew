@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import Users from "./components/Users";
 import "./App.css";
-import Home from "./components/Home";
 import { useState, useEffect } from "react";
 import { fetchData } from "./api/api";
+import Welcome from "./components/Welcome";
+import Home from "./components/Home";
 
 function App() {
   const [users, setUsers] = useState(null);
@@ -41,6 +42,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/welcome" element={<Welcome />} />
         <Route
           path="/users"
           element={
