@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
+const userRoutes = require("./routes/users.routes");
 const createError = require("http-errors");
-const axios = require("axios");
 require("dotenv").config();
 
 //----------------------------------------
@@ -21,14 +21,7 @@ app.use(morgan("dev"));
 //----------------------------------------
 //Routes
 //----------------------------------------
-app.get("/users", async (req, res, next) => {
-  try {
-    const result = await axios.get("https://randomuser.me/api/?results=50");
-    res.status(200).json(result.data.results);
-  } catch (error) {
-    next(error);
-  }
-});
+app.use("/users", userRoutes);
 
 //----------------------------------------
 //404 and Error handler
