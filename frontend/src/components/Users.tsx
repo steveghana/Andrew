@@ -23,10 +23,7 @@ type UsersProps = {
       }[]
     | null;
   isLoading: boolean;
-  handleDelete: (
-    event: React.MouseEvent<HTMLButtonElement>,
-    id: number
-  ) => void;
+  handleDelete: () => void;
 };
 
 const Users = (props: UsersProps) => {
@@ -81,7 +78,7 @@ const Users = (props: UsersProps) => {
                     color="error"
                     variant="outlined"
                     style={{ display: "inline-block", margin: "10px" }}
-                    onClick={(event) => props.handleDelete(event, id)}
+                    onClick={props.handleDelete}
                   >
                     Delete user
                   </Button>

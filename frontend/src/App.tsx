@@ -33,7 +33,7 @@ function App() {
   //Delete User from local storage
   //----------------------------------------
 
-  const handleDelete = (event: React.MouseEvent, id: number) => {
+  const handleDelete = () => {
     console.log("User has been deleted from localstorage");
   };
 
@@ -47,7 +47,7 @@ function App() {
             <Users
               users={users}
               isLoading={isLoading}
-              handleDelete={(event) => handleDelete(event, id)}
+              handleDelete={handleDelete}
             />
           }
         />
