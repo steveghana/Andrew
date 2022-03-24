@@ -1,18 +1,16 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CreateUser from "./pages/CreateUser";
 import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/users" element={<CreateUser />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <Routes>
+        <Route path="/homepage" element={<HomePage />} />
+        <Route path="/createuser" element={<CreateUser />} />
+      </Routes>
+    </div>
   );
 }
 
